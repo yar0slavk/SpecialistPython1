@@ -6,5 +6,9 @@
 # Формат выходных данных: Выведите количество дней в данном году.
 
 year = int(input("Год: "))
+days = 365
 
-# TODO: your code here
+if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+    days = 366
+
+print(days, ' days')
