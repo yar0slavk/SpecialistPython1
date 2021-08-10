@@ -28,4 +28,9 @@
 # 19 189.81 Rub.
 # 20 199.80 Rub.
 
-# TODO: your code here
+x = float(input('Input x (x < 100000): '))
+
+i = 1
+while i <= 20:
+    print('%2d %8.2f Rub.' % (i, i * x))
+    i += 1
