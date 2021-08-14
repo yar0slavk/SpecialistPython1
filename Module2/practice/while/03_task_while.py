@@ -9,4 +9,11 @@
 # 123
 # 1234
 
-# TODO: your code here
+n = int(input('Input n (n > 0): '))
+
+i = 1
+tmp = ''
+while i <= n:
+    tmp += str(i)
+    print(tmp)
+    i += 1
