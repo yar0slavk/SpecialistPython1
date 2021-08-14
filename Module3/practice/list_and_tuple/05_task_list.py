@@ -3,9 +3,12 @@
 # выровненного по правой стороне - слева короткие слова дополняем символами пробела
 
 # Исходные данные:
-fruits = ["яблоко", "банан", "киви", "арбуз"]
+fruits = ["яблоко", "бананнананан", "киви", "арбуз"]
 
-# TODO: your code here
+max_len = len(max(fruits, key=len))
+format_string = '{}. {:>' + str(max_len) + '}'
+for i, fr in enumerate(fruits, 1):
+    print(format_string.format(i, fr))
 
 # Пример вывода:
 # 1. яблоко
