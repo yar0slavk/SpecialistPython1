@@ -16,4 +16,22 @@
 # 220 284
 # 284 220
 
-# TODO: your code here
+n = int(input('целое число N (1≤N≤10000): '))
+
+while n > 0:
+    s1 = 0
+    d1 = 1
+    while d1 < n:
+        if n % d1 == 0:
+            s1 += d1
+        d1 += 1
+    if s1 < n:
+        s2 = 0
+        d2 = 1
+        while d2 < s1 and s2 < n:
+            if s1 % d2 == 0:
+                s2 += d2
+            d2 += 1
+        if n == s2:
+            print(n, s1)
+    n -= 1
