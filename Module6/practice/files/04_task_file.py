@@ -11,3 +11,25 @@
 # Возможно пригодится:
 # Чтобы получить список больших букв русского алфавита:
 # print(list(map(chr, range(ord('А'), ord('Я')+1))))
+
+import os
+
+path = os.path.join('data', 'fruits.txt')
+f = open(path, 'r', encoding='UTF-8')
+fruit_dict = {}
+for line in f:
+    fruit = line.rstrip()
+    if not fruit:
+        continue
+    lst = fruit_dict.setdefault(fruit[0], [])
+    lst.append(fruit)
+f.close()
+
+if len(fruit_dict):
+    for letter, fruits in fruit_dict.items():
+        filename = 'fruits_' + letter + '.txt'
+        path = os.path.join('data', filename)
+        f = open(path, 'w', encoding='UTF-8')
+        for fruit in fruits:
+            f.write(fruit + '\n')
+        f.close()
