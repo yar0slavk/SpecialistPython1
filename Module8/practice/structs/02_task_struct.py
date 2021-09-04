@@ -5,3 +5,18 @@
 #   например, lst = [1, 2, 4, 5, 6, 2, 5, 2], нужно получить lst2 = [1, 2, 4, 5, 6]
 #   2. элементы исходного списка, которые не имеют повторений(встречаются только один раз):
 #   например, lst = [1 , 2, 4, 5, 6, 2, 5, 2], нужно получить lst2 = [1, 4, 6]
+import random
+
+
+def create_list(size, of=0, to=100):
+    return [random.randint(of, to) for _ in range(size)]
+
+
+lst = create_list(8, to=10)
+print(lst)
+
+lst2 = list(set(lst))
+print(lst2)
+
+lst3 = list(filter(lambda x: lst.count(x) == 1, lst))
+print(lst3)
